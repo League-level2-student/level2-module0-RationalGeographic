@@ -1,8 +1,26 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class _00_ArrayCheatSheet {
 	public static void main(String[] args) {
 		//1. make an array of 5 Strings
+		String[] arstring = new String[50];
+		for (int i = 0; i < 50; i++) {
+			arstring[i]="i am " + i;
+		}
+		//arstring[0] = "nikita";
+		//arstring[1] = "cobra";
+		//arstring[2] = "john";
+		//arstring[3] = "daniel";
+		//arstring[4] = "alex";
+		
+		//Arrays.sort(arstring);
+		
+
+		for (int i = 0; i < 50; i++) {
+			System.out.println(arstring[i]);
+		}
 		
 		//2. print the third element in the array
 		
