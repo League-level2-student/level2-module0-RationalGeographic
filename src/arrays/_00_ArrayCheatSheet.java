@@ -55,6 +55,7 @@ public class _00_ArrayCheatSheet {
 		}
 		System.out.println(lowval);
 	}
+	
 
 	// 7. use a for loop to make every value of the integer array a random number
 
