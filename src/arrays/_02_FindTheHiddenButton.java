@@ -6,10 +6,12 @@
 
 package arrays;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -34,7 +36,7 @@ public class _02_FindTheHiddenButton implements ActionListener {
 		window = new JFrame("Find the Button");
 		panel = new JPanel();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(500, 500);
+		window.setSize(800, 800);
 
 		// 3. Ask the user to enter a positive number and convert it to an int
 
@@ -47,10 +49,22 @@ public class _02_FindTheHiddenButton implements ActionListener {
 			arbutton[i].setSize(num, num);
 			arbutton[i].addActionListener(this);
 			panel.add(arbutton[i]);
+			Random rando = new Random();
+			int greenValue = rando.nextInt(255);
+			int blueValue = rando.nextInt(255);
+			int redValue = rando.nextInt(255);
+
+			arbutton[i].setBackground(new Color(redValue, blueValue, greenValue));
+			arbutton[i].setOpaque(true);
+			arbutton[i].setBorderPainted(false);
+			// arbutton[i].setBorder(BorderFactory.createLineBorder(new Color(redValue,
+			// blueValue, greenValue), 0));
 
 		}
 		Random rand = new Random();
 		hiddenButton = rand.nextInt(num);
+		for (int j = 0; j < arbutton.length; j++) {
+		}
 
 		// 5. Make a for loop to iterate through the JButton array
 		// 6. initialize each JButton in the array
@@ -60,14 +74,15 @@ public class _02_FindTheHiddenButton implements ActionListener {
 		// 9 add the panel to the window
 		window.add(panel);
 		// 10. call setExtendedState(JFrame.MAXIMIZED_BOTH) on your JFrame object.
-		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		// This sets window size to fill screen :::
+		// window.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		// 11. set the JFrame to visible.
 		window.setVisible(true);
 		// 12. Give the user the instructions for the game.
 
 		// 13. initialize the hiddenButton variable to a random number less than the int
 		// created in step 3
-		
+
 		// 14. Set the text of the JButton located at hiddenButton the read "ME"
 		arbutton[hiddenButton].setText("me");
 		// 15. Use to pause the program.
@@ -82,6 +97,7 @@ public class _02_FindTheHiddenButton implements ActionListener {
 
 		// 16. Set the text of the JButton located at hiddenButton to be blank.
 		arbutton[hiddenButton].setText("");
+
 	}
 
 	@Override
@@ -94,6 +110,8 @@ public class _02_FindTheHiddenButton implements ActionListener {
 		} else {
 			System.out.println("tri agin");
 		}
+
 // 18. else tell them to try again
 	}
+
 }
