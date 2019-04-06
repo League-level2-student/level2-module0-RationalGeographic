@@ -1,41 +1,54 @@
 /* Paste the code into a new Processing sketch and complete the steps. */
 
 //1. create an array of ints. don't initialize it yet.
-int[] int1 = new int[5];
+int[] int1;
 void setup() {
   //2. set the size of your window
- 
+  size(500, 500);
   //  if you are using Processing 3, you cannot use variables
   //  because the developers don't know how programming is supposed to work.
 
   //3. initialize your array with the built in width variable
-  
+  int1 = new int[width];
+
+
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
+  raoop();
 
   //5. call the noStroke() method
-
+  noStroke();
 }
 
 void draw() {
   //6. set the background color with background(r, g, b);
-
+  background(53, 85, 210);
   //7. set the color for your graph
-
+  fill(#FFD500);
   //8. draw a rectangle for each int in your array.
+  for ( int o = 0; o<500; o++) {
+    rect(o, height, 1, -int1[o]);
+  }
   //   the x value will be the current index in the array
   //   the y value will the height variable
   //   the width is 1 (one)
   //   the height is negative the value of the element at the current index of the array
-
+  stepSort(int1);
 
   //9. call the stepSort method
-
-  //10. extract the code that randomizes the array into a method.
-
-  //11. call the method you made in step 10 when the mouse is pressed
-
+  if (mousePressed) {
+    raoop();
+  }
 }
+//10. extract the code that randomizes the array into a method.
+void raoop () { 
+  for ( int i=0; i<500; i++) {
+    int1[i] = int(random(height));
+  }
+}
+//11. call the method you made in step 10 when the mouse is pressed
+
+
 
 void stepSort(int[] arr) {
   for (int i = 1; i < arr.length; i++) {
